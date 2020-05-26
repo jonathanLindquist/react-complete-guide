@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
-import UserOutput from './Person/UserOutput';
-import UserInput from './Person/UserInput';
 
 class App extends Component {
 	state = {
@@ -35,12 +33,6 @@ class App extends Component {
 		});
 	};
 
-	changeUsernameHandler = (event) => {
-		this.setState({
-			// persons[value].username: event.target.value
-		});
-	};
-
 	render() {
 		const style = {
 			backgroundColor: 'white',
@@ -59,24 +51,18 @@ class App extends Component {
 				<Person
 					name={this.state.persons[0].name}
 					age={this.state.persons[0].age}
-					changeUsernameHandler={this.changeUsernameHandler}
-					username={this.state.username}
 				/>
 				<Person
 					name={this.state.persons[1].name}
 					age={this.state.persons[1].age}
 					click={this.switchNameHandler.bind(this, 'Jonathan!')}
 					changed={this.nameChangedHandler}
-					changeUsernameHandler={this.changeUsernameHandler}
-					username={this.state.username}
 				>
 					My Hobbies: racing
 				</Person>
 				<Person
 					name={this.state.persons[2].name}
 					age={this.state.persons[2].age}
-					changeUsernameHandler={this.changeUsernameHandler}
-					username={this.state.username}
 				/>
 			</div>
 		);
@@ -85,6 +71,8 @@ class App extends Component {
 }
 
 export default App;
+
+// REACT HOOKS example below
 
 // const app = (props) => {
 // 	const [ personsState, setPersonsState ] = useState({
