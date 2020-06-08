@@ -7,7 +7,12 @@ import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
-	state = {
+	constructor(props) {
+		super(props);
+		console.log('[App.js] constructor');
+	}
+
+		state = {
 		persons: [
 			{ id: 'asdfasdf', name: 'davie', age: 30, username: 'default username value' }, //
 			{ id: 'qwerqerf', name: 'Manu', age: 29, username: 'default username value' },
@@ -15,6 +20,20 @@ class App extends Component {
 		],
 		showPersons: false
 	};
+
+	static getDerivedStateFromProps(props, state) {
+		console.log('[App.js] getDerivedStateFromProps', props);
+		return state;
+	}
+
+	// will be deprecated soon
+	componentWillMount() {
+		console.log('[App.js] componentWillMount');
+	}
+
+	componentDidMount() {
+		console.log('[App.js] componentDidMount');
+	}
 
 	// switchNameHandler = (newName) => {
 	// 	// console.log('Was clicked!');
@@ -65,6 +84,7 @@ class App extends Component {
 	};
 
 	render() {
+		console.log('[App.js] render');
 		// const style = {
 		// 	backgroundColor: 'green',
 		// 	color: 'white',
