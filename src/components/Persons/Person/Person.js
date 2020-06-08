@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 // import Radium from 'radium';
 // import styled from 'styled-components';
 import classes from './Person.css';
+
+import Aux from '../../../hoc/Aux';
 
 // import './Person.css';
 
@@ -18,21 +20,27 @@ import classes from './Person.css';
 //             }
 //         `;
 
-const person = (props) => {
-    // const style = {
-    //     '@media (min-length: 500px)': {
-    //         width: '450px'
-    //     }
-    // };
-    console.log('[Person.js] rendering...');
-    return (
-        // <div className="Person" style={style}>
-        <div className={classes.Person}>
-            <p onClick={props.click}>I'm {props.name} and I am {props.age} years old!</p>
-            <p>{props.children}</p>
-            <input type="text" onChange={props.changed} value={props.name} />
-        </div>
-    );
+class Person extends Component {
+	// const style = {
+	//     '@media (min-length: 500px)': {
+	//         width: '450px'
+	//     }
+	// };
+	render() {
+		console.log('[Person.js] rendering...');
+		return (
+			// <div className="Person" style={style}>
+			// <div className={classes.Person}>
+			<Aux>
+				<p onClick={this.props.click}>
+					I'm {this.props.name} and I am {this.props.age} years old!
+				</p>
+				<p>{this.props.children}</p>
+				<input type="text" onChange={this.props.changed} value={this.props.name} />
+			</Aux>
+			// </div>
+		);
+	}
 }
 
-export default person;
+export default Person;
