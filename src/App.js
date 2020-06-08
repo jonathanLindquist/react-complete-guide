@@ -4,7 +4,6 @@ import classes from './App.css';
 // import styled from 'styled-components';
 import Person from './Person/Person';
 
-
 class App extends Component {
 	state = {
 		persons: [
@@ -75,9 +74,9 @@ class App extends Component {
 		// 		backgroundColor: 'lightgreen',
 		// 		color: 'black'
 		// 	}
-    // };
-    
-    let buttonClass = [classes.Button];
+		// };
+
+		let buttonClass = [ classes.Button ];
 		let persons = null;
 
 		if (this.state.showPersons) {
@@ -101,8 +100,8 @@ class App extends Component {
 			// style[':hover'] = {
 			// 	backgroundColor: 'salmon',
 			// 	color: 'black'
-      // };
-      buttonClass.push(classes.Red);
+			// };
+			buttonClass.push(classes.Red);
 		}
 
 		const assignedClasses = [];
